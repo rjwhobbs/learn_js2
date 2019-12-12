@@ -27,6 +27,7 @@ function test(a, b, c = 1) {
 	console.log(a);
 	console.log(b);
 	console.log(c);
+	console.log(arguments[2]);
 }
 
 test(1, 2, 3);
