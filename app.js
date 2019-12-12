@@ -30,6 +30,13 @@ function test(a, b, c = 1) {
 	console.log(arguments[2]); // this only array "like"
 }
 
-test(1, 2, 3);
+function test2(...nums) {
+	console.log(nums[0]);
+	console.log(nums[1]);
+	console.log(nums[2]);
+	console.log(nums); // this only array "like"
+}
+//test(1, 2, 3);
+test2(1, 2, 3);
 
 
