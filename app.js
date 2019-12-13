@@ -39,4 +39,6 @@ function test2(...nums) {
 //test(1, 2, 3);
 test2(1, 2, 3);
 
-
+(function(thing) {
+	console.log(thing);
+}("Stuff"));
