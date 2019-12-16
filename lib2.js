@@ -1,1 +1,3 @@
-var libName = "lib2";
+(function(){
+	var libName = "lib2";
+})();

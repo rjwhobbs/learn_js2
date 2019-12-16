@@ -42,3 +42,5 @@ test2(1, 2, 3);
 (function(thing) {
 	console.log(thing);
 }("Stuff"));
+
+console.log(process.test);
