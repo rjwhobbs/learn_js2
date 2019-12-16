@@ -1,4 +1,8 @@
-require('./lib1');
-require('./lib2');
+function thing(otherThing) {
+	return function nothing(someThing) {
+			console.log(otherThing + someThing);
+	}
+}
 
-console.log(libName);
+let stuff = thing('one');
+stuff('twoQQQ');
