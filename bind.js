@@ -6,6 +6,11 @@ let person = {
 	}
 }
 
+let person2 = {
+	firstName: 'Jane',
+	lastName: 'Doe'
+}
+
 // let logPerson = function (l1, l2) {
 // 	console.log(this.getFullName());
 // 	console.log(l1 + ' ' + l2);
@@ -19,3 +24,5 @@ let logPerson = function (l1, l2) {
 
 logPerson.call(person, "things", "morethings"); // The call method will decide what 'this' refers to
 logPerson.apply(person, ['meh', 'bla']);
+
+console.log(person.getFullName.apply(person2));
