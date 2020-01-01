@@ -26,3 +26,12 @@ logPerson.call(person, "things", "morethings"); // The call method will decide w
 logPerson.apply(person, ['meh', 'bla']);
 
 console.log(person.getFullName.apply(person2));
+
+// function currying
+
+function mult(a, b) {
+	return a * b;
+}
+
+let mult2 = mult.bind(this, 2);
+console.log(mult2(8));
