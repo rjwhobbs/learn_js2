@@ -22,7 +22,8 @@ let logPerson = function (l1, l2) {
 
 // bind copies and call executes, apply accepts an array
 
-logPerson.call(person, "things", "morethings"); // The call method will decide what 'this' refers to
+let test = logPerson.call(person, "things", "morethings"); // The call method will decide what 'this' refers to
+//console.log(test);
 logPerson.apply(person, ['meh', 'bla']);
 
 console.log(person.getFullName.apply(person2));
@@ -34,4 +35,4 @@ function mult(a, b) {
 }
 
 let mult2 = mult.bind(this, 2);
-console.log(mult2(8));
+console.log(mult2(1));
