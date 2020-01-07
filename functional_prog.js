@@ -29,3 +29,9 @@ test = mapForEach(arr, limiter2(4));
 
 console.log(arr);
 console.log(test);
+
+var arrcpy = _.map(arr, item => item * 3);
+console.log(arrcpy);
+
+arrcpy = _.filter(arrcpy, el => el % 4 === 0);
+console.log(arrcpy);
