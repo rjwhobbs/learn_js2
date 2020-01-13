@@ -6,14 +6,18 @@ let person = {
 	}
 }
 
-let somePerson = {
+let john = {
 	fname: 'John',
 	lname: 'Doe'
 }
 // NEVER ACTUALLY DO THIS!!!
-somePerson.__proto__ = person;
+john.__proto__ = person;
 
-console.log(somePerson.getFullName());
+for (prop in john) {
+	console.log(prop + ': ' + john[prop]);
+}
+
+console.log(john.getFullName());
 
 let jane = {
 	fname: 'Jane'
@@ -22,3 +26,12 @@ let jane = {
 jane.__proto__ = person;
 
 console.log(jane.getFullName());
+
+let str = "word";
+
+// reflecting on the object
+for (prop in john) {
+	if (john.hasOwnProperty(prop)) {
+		console.log(prop + ": " + john[prop]);
+	}
+}
