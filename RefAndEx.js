@@ -36,23 +36,34 @@ var jim = {
 }
 
 var createAssigner = function(keysFunc, defaults) {
+	// console.log(defaults);
 	return function(obj) {
-	  var length = arguments.length;
-		if (defaults) obj = Object(obj);
+	  	var length = arguments.length;
+	//   console.log(arguments);
+		if (defaults)  { 
+			// console.log('here');
+			obj = Object(obj);
+		}
 		if (length < 2 || obj == null) return obj;
 		for (var index = 1; index < length; index++) {
+			console.log(index);
 			var source = arguments[index],
 				keys = keysFunc(source),
 				l = keys.length;
 			for (var i = 0; i < l; i++) {
 				var key = keys[i];
-				if (!defaults || obj[key] === void 0) obj[key] = source[key];
-		}
-	  }
-	  return obj;
+				console.log(typeof source);
+				console.log(source);
+				if (!defaults || obj[key] === void 0) {
+					// console.log('here');
+					obj[key] = source[key]
+				}
+			}
+	  	}
+	  	return obj;
 	};
 };
-
+let i = 1;
 var hasEnumBug = !{toString: null}.propertyIsEnumerable('toString');
 
 let _ = createAssigner;
@@ -63,7 +74,10 @@ _.isObject = function(obj) {
 _.allKeys = function(obj) {
     if (!_.isObject(obj)) return [];
     var keys = [];
-    for (var key in obj) keys.push(key);
+    for (var key in obj) {
+		keys.push(key)
+		console.log(keys);
+	};
     // Ahem, IE < 9.
     if (hasEnumBug) collectNonEnumProps(obj, keys);
     return keys;
